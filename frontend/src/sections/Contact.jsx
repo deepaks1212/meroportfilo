@@ -72,6 +72,7 @@ export default function Contact({ dark }) {
     display:"flex",
     flexDirection:"column",
     justifyContent:"center",
+    alignItems:"flex-start",
     width:"100%",
     minWidth:0,
   };
@@ -81,12 +82,9 @@ export default function Contact({ dark }) {
     color:tc,
     fontWeight:500,
     marginTop:2,
-    textDecoration:"underline",
-    textDecorationColor:`${tc}60`,
-    textDecorationThickness:1.5,
-    textUnderlineOffset:3,
+    textDecoration:"none",
     cursor:"pointer",
-    transition:"color 0.2s, text-decoration-color 0.2s",
+    transition:"color 0.2s",
     width:"100%",
     minWidth:0,
   };
@@ -102,10 +100,10 @@ export default function Contact({ dark }) {
           </div>
         </Anim>
 
-        <div style={{ display:"grid", gridTemplateColumns:"1fr 1.5fr", gap:40, alignItems:"start" }} className="two-col">
-          <div style={{ display:"flex", flexDirection:"column", gap:16 }}>
+        <div style={{ display:"grid", gridTemplateColumns:"1fr 1.5fr", gap:40, alignItems:"start", justifyItems:"start" }} className="two-col">
+          <div style={{ display:"flex", flexDirection:"column", gap:16, width:"100%" }}>
             <Anim dir="left">
-              <div style={{ background:cb, border:`1px solid ${br}`, borderRadius:20, padding:28 }}>
+              <div style={{ background:cb, border:`1px solid ${br}`, borderRadius:20, padding:28, textAlign:"left" }}>
                 <h3 style={{ fontSize:18, fontWeight:800, color:tc, margin:"0 0 20px" }}>Contact Info</h3>
                 {[ ["📧","Email","mandaldipak94345@gmail.com","mandaldipak94345@gmail.com"], ["💼","LinkedIn","https://www.linkedin.com/in/deepak-mandal-b183b0280/","deepak_mandal"], ["🐙","GitHub","https://github.com/deepaks1212","deepaks1212"], ["📍","Location","SF, CA · Remote OK","Tilathi-koiladi,Saptari,Nepal"] ].map(([icon,label,val,display])=>{
                   const isEmail = label === "Email";
@@ -117,7 +115,7 @@ export default function Contact({ dark }) {
                       <div style={contactTextStyle}>
                         <div style={{ fontSize:11, color:mc, fontWeight:600, textTransform:"uppercase", letterSpacing:0.8 }}>{label}</div>
                         {isEmail || isLink ? (
-                          <a href={href} target={isLink ? "_blank" : undefined} rel={isLink ? "noopener noreferrer" : undefined} style={contactLinkStyle} onMouseEnter={e=>{e.target.style.color=C.accent; e.target.style.textDecorationColor=C.accent}} onMouseLeave={e=>{e.target.style.color=tc; e.target.style.textDecorationColor=`${tc}60`}}>{display}</a>
+                          <a href={href} target={isLink ? "_blank" : undefined} rel={isLink ? "noopener noreferrer" : undefined} style={contactLinkStyle} onMouseEnter={e=>{e.target.style.color=C.accent}} onMouseLeave={e=>{e.target.style.color=tc}}>{display}</a>
                         ) : (
                           <div style={{ ...contactLinkStyle, textDecoration:"none", color:tc, marginTop:2 }}>{display}</div>
                         )}

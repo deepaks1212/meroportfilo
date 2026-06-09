@@ -35,14 +35,14 @@ export default function Projects({ dark }) {
           </div>
         </Anim>
 
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))", gap:20, alignItems:"stretch" }}>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))", gridAutoRows:"1fr", gap:20, alignItems:"stretch" }}>
           {filtered.map((p,i) => (
             <Anim key={p.id} delay={i*0.07}>
               <div
                 onMouseEnter={()=>setHovered(p.id)} onMouseLeave={()=>setHovered(null)}
                 style={{
                   display:"flex", flexDirection:"column", justifyContent:"space-between", alignItems:"stretch",
-                  minHeight:440, height:"100%",
+                  minHeight:420, height:"100%",
                   background:cb, border:`1px solid ${hovered===p.id?`${p.color}44`:br}`,
                   borderRadius:20, overflow:"hidden", cursor:"pointer",
                   transform: hovered===p.id ? "translateY(-10px)" : "none",
@@ -57,24 +57,28 @@ export default function Projects({ dark }) {
                   <div style={{ position:"absolute", bottom:0, left:0, right:0, height:3, background:`linear-gradient(90deg,${p.color},${p.color}55)` }}/>
                 </div>
 
-                <div style={{ padding:18 }}>
-                  <h3 style={{ fontSize:18, fontWeight:800, color:tc, margin:"0 0 10px", letterSpacing:-0.5 }}>{p.title}</h3>
-                  <p style={{ fontSize:13, color:mc, lineHeight:1.6, margin:"0 0 16px" }}>{p.desc}</p>
-                  <div style={{ display:"flex", gap:6, flexWrap:"wrap", marginBottom:16 }}>
-                    {p.stack.map(s=>(
-                      <span key={s} style={{ fontSize:10, fontWeight:700, color:mc, background: dark?"rgba(255,255,255,0.05)":"#EEF1F8", padding:"3px 8px", borderRadius:6 }}>{s}</span>
-                    ))}
+                <div style={{ padding:18, display:"flex", flexDirection:"column", justifyContent:"space-between", minHeight:"calc(100% - 96px)" }}>
+                  <div style={{ minHeight:132 }}>
+                    <h3 style={{ fontSize:18, fontWeight:800, color:tc, margin:"0 0 10px", letterSpacing:-0.5, minHeight:52, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{p.title}</h3>
+                    <p style={{ fontSize:13, color:mc, lineHeight:1.6, margin:"0 0 16px" }}>{p.desc}</p>
                   </div>
-                  <div style={{ display:"flex", gap:12, alignItems:"center", flexWrap:"wrap" }}>
-                    <a href="#" style={{ fontSize:12, color:mc, textDecoration:"none", fontWeight:600, display:"flex", alignItems:"center", gap:6, transition:"color 0.2s" }}
-                      onMouseOver={e=>e.currentTarget.style.color=tc} onMouseOut={e=>e.currentTarget.style.color=mc}>
-                      <span style={{ fontSize:14 }}>⌥</span> GitHub
-                    </a>
-                    <a href="#" style={{ fontSize:12, color:p.color, textDecoration:"none", fontWeight:700, display:"flex", alignItems:"center", gap:5, padding:"6px 14px", borderRadius:8, background:`${p.color}12`, border:`1px solid ${p.color}33`, transition:"all 0.2s" }}
-                      onMouseOver={e=>{e.currentTarget.style.background=`${p.color}22`;e.currentTarget.style.transform="translateX(3px)";}}
-                      onMouseOut={e=>{e.currentTarget.style.background=`${p.color}12`;e.currentTarget.style.transform="none";}}>
-                      Live Demo ↗
-                    </a>
+                  <div>
+                    <div style={{ display:"flex", gap:6, flexWrap:"wrap", marginBottom:16 }}>
+                      {p.stack.map(s=>(
+                        <span key={s} style={{ fontSize:10, fontWeight:700, color:mc, background: dark?"rgba(255,255,255,0.05)":"#EEF1F8", padding:"3px 8px", borderRadius:6 }}>{s}</span>
+                      ))}
+                    </div>
+                    <div style={{ display:"flex", gap:12, alignItems:"center", flexWrap:"wrap" }}>
+                      <a href="#" style={{ fontSize:12, color:mc, textDecoration:"none", fontWeight:600, display:"flex", alignItems:"center", gap:6, transition:"color 0.2s" }}
+                        onMouseOver={e=>e.currentTarget.style.color=tc} onMouseOut={e=>e.currentTarget.style.color=mc}>
+                        <span style={{ fontSize:14 }}>⌥</span> GitHub
+                      </a>
+                      <a href="#" style={{ fontSize:12, color:p.color, textDecoration:"none", fontWeight:700, display:"flex", alignItems:"center", gap:5, padding:"6px 14px", borderRadius:8, background:`${p.color}12`, border:`1px solid ${p.color}33`, transition:"all 0.2s" }}
+                        onMouseOver={e=>{e.currentTarget.style.background=`${p.color}22`; e.currentTarget.style.transform="translateX(3px)";}}
+                        onMouseOut={e=>{e.currentTarget.style.background=`${p.color}12`; e.currentTarget.style.transform="none";}}>
+                        Live Demo ↗
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

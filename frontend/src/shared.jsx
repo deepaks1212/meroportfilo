@@ -44,15 +44,15 @@ export const SKILLS = [
   { name:"React.js", level:95, cat:"Frontend", color:"#61DAFB" },
   { name:"Node.js", level:90, cat:"Backend", color:"#68A063" },
   { name:"MongoDB", level:85, cat:"Database", color:"#4DB33D" },
-  { name:"Git Hub", level:88, cat:"Backend", color:"#00FFD1" },
-  { name:" Quality Assurance", level:82, cat:"Language", color:"#3178C6" },
-  { name:"Python", level:78, cat:"Language", color:"#FFE066" },
-  { name:"C++", level:72, cat:"DevOps", color:"#FF9900" },
+  { name:"Git Hub", level:88, cat:" Tools", color:"#00FFD1" },
+  { name:" Quality Assurance", level:82, cat:"Testing", color:"#3178C6" },
+  { name:"Python", level:70, cat:"Language", color:"#FFE066" },
+  { name:"C++", level:90, cat:"Language", color:"#FF9900" },
 
 ];
 
 export const EXPERIENCE = [
-  { role:"Mern Stack Engineer", company:"Acme Corp", period:"2022 – Present", color:"#00FFD1",
+  { role:"Mern Stack Engineer", company:"Acme Corp", period:"2026 – Present", color:"#00FFD1",
     desc:"Led development of microservices architecture serving 2M+ users. Reduced API latency by 60% and mentored a team of 5 engineers." },
   { role:"", company:"StartupXYZ", period:"2020 – 2022", color:"#7C5CFC",
     desc:"Built and launched 3 SaaS products from scratch using MERN stack. Integrated AI features that boosted user engagement by 40%." },
