@@ -1,0 +1,5 @@
+# Ignore generated folders and environment files
+backend/node_modules/
+frontend/node_modules/
+frontend/dist/
+backend/.env
