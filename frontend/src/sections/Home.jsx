@@ -107,8 +107,8 @@ export default function Home({ dark }) {
           </Anim>
         </div>
 
-        <Anim delay={0.15} dir="right" style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:20 }}>
-          <PhotoAvatar size={260} dark={dark} photoUrl={PROFILE_PHOTO} alt="er. dipak mandal"/>
+        <Anim delay={0.10} dir="right" style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:20 }}>
+          <PhotoAvatar size={360} dark={dark} photoUrl={PROFILE_PHOTO} alt="er. dipak mandal"/>
           <div style={{ display:"flex", gap:8, flexWrap:"wrap", justifyContent:"center", maxWidth:280 }}>
             {["React","Node.js","MongoDB","DSA"].map((t,i)=>(
               <span key={t} style={{

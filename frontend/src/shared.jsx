@@ -62,13 +62,13 @@ export const EXPERIENCE = [
 
 export const SERVICES = [
   { icon:"💻", title:"Full-Stack Development", color:"#00FFD1",
-    desc:"End-to-end web applications using MERN stack with scalable architecture and clean, maintainable code.", price:"From $3,000" },
+    desc:"End-to-end web applications using MERN stack with scalable architecture and clean, maintainable code." },
   { icon:"🤖", title:"AI Integration", color:"#7C5CFC",
-    desc:"Embed intelligent features — chatbots, recommendation engines, smart search — powered by OpenAI and custom models.", price:"From $2,000" },
+    desc:"Embed intelligent features — chatbots, recommendation engines, smart search — powered by OpenAI and custom models." },
   { icon:"☁️", title:"Cloud & DevOps", color:"#FFB830",
-    desc:"Deploy and scale on AWS or GCP with Docker, CI/CD pipelines, load balancing and auto-scaling.", price:"From $1,500" },
+    desc:"Deploy and scale on AWS or GCP with Docker, CI/CD pipelines, load balancing and auto-scaling." },
   { icon:"📱", title:"UI/UX Design & Build", color:"#FF4D8D",
-    desc:"Pixel-perfect, accessible interfaces that delight users across all devices, built with React and modern CSS.", price:"From $1,200" },
+    desc:"Pixel-perfect, accessible interfaces that delight users across all devices, built with React and modern CSS." },
 ];
 
 export const FAQ = [
